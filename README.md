@@ -21,16 +21,16 @@ Key security highlights:
 
 ## 🧠 Key Features
 
-* AI-generated workout & diet plans tailored to:
+* AI-powered workout & diet plans tailored to:
 
   * Height, weight, age
   * Workout history & medical conditions
   * Daily routines and lifestyle
   * User goals (fat loss, bulking, maintenance, etc.)
+  * Equipment availability
 * Privacy-focused data handling
 * Customizable recommendations that evolve with feedback
 * Admin dashboard with role-based controls (no data visibility)
-* Simple mobile-first UI
 
 ## 🛠️ Tech Stack (Planned)
 
@@ -82,4 +82,3 @@ Instructions for:
 * Umut – Junior Developer / Frontend
 * Ural – Product / Strategy / Planning
 
-Feel free to fork, suggest features, or contribute. Let’s build something meaningful 🚀
