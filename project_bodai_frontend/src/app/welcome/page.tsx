@@ -439,7 +439,7 @@ const WelcomePage: React.FC = () => {
           </div>
           <h1 className="text-4xl font-bold text-white mb-4">Welcome to BodAI!</h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
-            Let's create your personalized fitness profile to provide you with the most effective workout plans and nutrition guidance. 
+            Lets create your personalized fitness profile to provide you with the most effective workout plans and nutrition guidance. 
             This quick setup will help our AI understand your unique needs, goals, and constraints to deliver customized recommendations 
             that fit perfectly into your lifestyle.
           </p>

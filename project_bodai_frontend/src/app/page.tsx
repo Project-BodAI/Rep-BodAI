@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, ChangeEvent, MouseEvent } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import { Eye, EyeOff, Mail, Lock } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
@@ -10,12 +10,12 @@ interface LoginFormData {
   password: string;
 }
 
-interface LoginPageState {
+{/*interface LoginPageState {
   formData: LoginFormData;
   showPassword: boolean;
   isLoading: boolean;
   rememberMe: boolean;
-}
+}*/}
 
 const App: React.FC = () => {
   const router = useRouter();
@@ -71,9 +71,9 @@ const App: React.FC = () => {
     }
   };
 
-  const handleSocialLogin = (provider: 'google' | 'facebook'): void => {
+  {/*const handleSocialLogin = (provider: 'google' | 'facebook'): void => {
     alert(`${provider === 'google' ? 'Google' : 'Facebook'} ile giriş yapılıyor...`);
-  };
+  };*/}
 
   const handleForgotPassword = (): void => {
     alert('You are being directed to the password reset page...');
