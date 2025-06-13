@@ -2,6 +2,7 @@
 
 import React, { useState, ChangeEvent, MouseEvent } from 'react';
 import { Eye, EyeOff, Mail, Lock } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 // Type definitions
 interface LoginFormData {
@@ -17,6 +18,8 @@ interface LoginPageState {
 }
 
 const App: React.FC = () => {
+  const router = useRouter();
+
   const [formData, setFormData] = useState<LoginFormData>({
     email: '',
     password: ''
@@ -60,6 +63,7 @@ const App: React.FC = () => {
       
       setIsLoading(false);
       alert(`Login attempt: ${formData.email}\nRemember me: ${rememberMe ? 'Yes' : 'No'}`);
+      router.push('/welcome'); //  Redirect to a welcome page
     } catch (error) {
       setIsLoading(false);
       console.error('Login error:', error);
@@ -93,7 +97,7 @@ const App: React.FC = () => {
         {/* Glassmorphism effect */}
         <div className="absolute inset-0 bg-white bg-opacity-10 backdrop-blur-lg rounded-3xl shadow-2xl"></div>
         
-        <div className="relative bg-gray-800 bg-opacity-50 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-700 p-8">
+        <div className="relative bg-gray-800 bg-opacity-50 backdrop-blur-xl rounded-3xl shadow-2xl border border-black-700 p-8">
           {/* Header */}
           <div className="text-center mb-8">
             <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-green-500 rounded-2xl mx-auto mb-4 flex items-center justify-center">
@@ -184,7 +188,7 @@ const App: React.FC = () => {
                   Logging in...
                 </div>
               ) : (
-                'Log in'
+                'Sign in'
               )}
             </button>
           </div>
