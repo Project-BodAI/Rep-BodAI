@@ -191,8 +191,8 @@ export default function FitnessTracker() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 p-4">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen flex items-start justify-center bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 pt-20 px-4">
+      <div className="w-full max-w-6xl">
         {/* Header */}
         <div className="bg-gray-800 rounded-xl shadow-lg p-6 mb-6 border border-gray-700">
           <div className="flex items-center justify-between">

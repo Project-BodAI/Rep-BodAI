@@ -163,7 +163,7 @@ const WelcomePage: React.FC = () => {
       await new Promise(resolve => setTimeout(resolve, 2000));
       
       console.log('User Profile:', profile);
-      alert('Profile setup completed successfully! Welcome to BodAI!');
+      /*alert('Profile setup completed successfully! Welcome to BodAI!');*/
       router.push('/dashboard'); //  Redirect to a dashboard page
       
       // Here you would typically redirect to the main app
@@ -194,7 +194,7 @@ const WelcomePage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
                 <label htmlFor="height" className="block text-sm font-medium text-gray-300 mb-2">
-                  Height (cm/ft)
+                  Height (cm/ft) *
                 </label>
                 <input
                   type="text"
@@ -210,7 +210,7 @@ const WelcomePage: React.FC = () => {
 
               <div>
                 <label htmlFor="weight" className="block text-sm font-medium text-gray-300 mb-2">
-                  Weight (kg/lbs)
+                  Weight (kg/lbs) *
                 </label>
                 <input
                   type="text"
@@ -226,7 +226,7 @@ const WelcomePage: React.FC = () => {
 
               <div>
                 <label htmlFor="age" className="block text-sm font-medium text-gray-300 mb-2">
-                  Age
+                  Age *
                 </label>
                 <input
                   type="number"
@@ -252,7 +252,7 @@ const WelcomePage: React.FC = () => {
             
             <div>
               <label htmlFor="workoutHistory" className="block text-sm font-medium text-gray-300 mb-2">
-                Workout Experience & History
+                Workout Experience & History *
               </label>
               <textarea
                 id="workoutHistory"
@@ -290,7 +290,7 @@ const WelcomePage: React.FC = () => {
             
             <div>
               <label htmlFor="lifestyle" className="block text-sm font-medium text-gray-300 mb-2">
-                Activity Level
+                Activity Level *
               </label>
               <select
                 id="lifestyle"
@@ -309,7 +309,7 @@ const WelcomePage: React.FC = () => {
 
             <div>
               <label htmlFor="dailyRoutines" className="block text-sm font-medium text-gray-300 mb-2">
-                Daily Routines & Schedule
+                Daily Routines & Schedule *
               </label>
               <textarea
                 id="dailyRoutines"
@@ -332,7 +332,7 @@ const WelcomePage: React.FC = () => {
             
             <div>
               <label htmlFor="primaryGoal" className="block text-sm font-medium text-gray-300 mb-2">
-                Primary Goal
+                Primary Goal *
               </label>
               <select
                 id="primaryGoal"
@@ -399,7 +399,7 @@ const WelcomePage: React.FC = () => {
 
             <div>
               <label htmlFor="workoutLocation" className="block text-sm font-medium text-gray-300 mb-2">
-                Primary Workout Location
+                Primary Workout Location *
               </label>
               <select
                 id="workoutLocation"
