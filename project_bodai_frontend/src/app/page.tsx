@@ -62,7 +62,7 @@ const App: React.FC = () => {
       });
       
       setIsLoading(false);
-      alert(`Login attempt: ${formData.email}\nRemember me: ${rememberMe ? 'Yes' : 'No'}`);
+      /*alert(`Login attempt: ${formData.email}\nRemember me: ${rememberMe ? 'Yes' : 'No'}`);*/
       router.push('/welcome'); //  Redirect to a welcome page
     } catch (error) {
       setIsLoading(false);
