@@ -28,6 +28,8 @@ Key security highlights:
   * Daily routines and lifestyle
   * User goals (fat loss, bulking, maintenance, etc.)
   * Equipment availability
+
+* (Form analyze by video recording)
 * Privacy-focused data handling
 * Customizable recommendations that evolve with feedback
 * Admin dashboard with role-based controls (no data visibility)
