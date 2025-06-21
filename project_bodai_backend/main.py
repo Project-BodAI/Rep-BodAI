@@ -7,29 +7,49 @@ main:app means: look in main.py, use the app object we defined.
 http://localhost:3000/docs
  """
 
-from fastapi import FastAPI, HTTPException, status
+from fastapi import FastAPI, HTTPException, Depends
+from sqlalchemy.orm import Session
+from database import SessionLocal, engine
+from models import Base, User
 from pydantic import BaseModel
-from typing import Dict
+#from dotenv import load_dotenv
+#load_dotenv()  # Load environment variables from .env file
 
 app = FastAPI()
 
 # Simulated in-memory database
-fake_db: Dict[str, str] = {}
+#fake_db: Dict[str, str] = {}
+
+Base.metadata.create_all(bind=engine)
+
+# Dependency
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
 # User model
-class User(BaseModel):
+class UserCreate(BaseModel):
     username: str
     password: str
 
 @app.post("/register")
-def register(user: User):
-    if user.username in fake_db:
-        raise HTTPException(status_code=400, detail="Username already exists.")
-    fake_db[user.username] = user.password
-    return {"message": "User registered successfully."}
+def register(user: UserCreate, db: Session = Depends(get_db)):
+    if db.query(User).filter(User.username == user.username).first():
+        raise HTTPException(status_code=400, detail="Username already exists")
+    db_user = User(username=user.username, password=user.password)
+    db.add(db_user)
+    db.commit()
+    db.refresh(db_user)
+    return {"message": "User created", "id": db_user.id}
 
 @app.post("/login")
-def login(user: User):
-    if user.username not in fake_db or fake_db[user.username] != user.password:
-        raise HTTPException(status_code=401, detail="Invalid credentials.")
-    return {"message": "Login successful."}
+def login(user: UserCreate, db: Session = Depends(get_db)):
+    db_user = db.query(User).filter(User.username == user.username, User.password == user.password).first()
+    if not db_user:
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+    return {"message": "Login successful"}
+
+
