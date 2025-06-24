@@ -6,6 +6,7 @@
 
 
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import requests
 from utils.security import hash_password 
@@ -17,6 +18,19 @@ SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 url = f"{SUPABASE_URL}/rest/v1/users"
 
 app = FastAPI()
+
+origins = [
+    "http://localhost:3000"  # Your frontend URL
+    # Add other allowed origins here
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,       # Which origins are allowed to talk to backend
+    allow_credentials=True,
+    allow_methods=["*"],         # Which HTTP methods are allowed
+    allow_headers=["*"],         # Which headers are allowed
+)
 
 # Define input schema
 class UserCreate(BaseModel):
