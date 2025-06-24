@@ -1,3 +1,6 @@
+# FastAPI application for user registration and login
+# This application uses FastAPI to create a RESTful API for user registration and login.
+# It uses SQLAlchemy for database interactions and Pydantic for data validation.
 #uvicorn main:app --reload --port 3000
 
 """ 
